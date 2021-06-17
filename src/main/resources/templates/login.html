@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+	    <title>MedicApp</title>
+	    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+	    <meta content="" name="keywords">
+	    <meta content="" name="description">
+	
+	        <!-- Favicons -->
+	    <link href="img/favicon.ico" rel="icon">
+	    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+	
+	        <!-- Google Fonts -->
+	    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Nunito:600,700,800,900" rel="stylesheet"> 
+	
+	        <!-- Bootstrap CSS File -->
+	    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	
+	        <!-- Libraries CSS Files -->
+	    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	    <link href="vendor/animate/animate.min.css" rel="stylesheet">
+	    <link href="vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
+	    <link href="vendor/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+	
+	        <!-- Main Stylesheet File -->
+	    <link href="css/hover-style.css" rel="stylesheet">
+	    <link href="css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class = "container">
+			<div class = "row">
+				<div class = "col-md-6 col-md-offset-3">
+					<h1>Login</h1>
+					<form th:action="@{/login}" method="post">
+						<div th:if="${param.error}">
+							<div class="alert alert-danger">
+								Invalid username or password.
+							</div>
+						</div>
+						<div th:if="${param.logout}">
+							<div class="alert alert-info">
+								You successfully logged out.
+							</div>
+						</div>
+						<div class = "form-group">
+							<label for = "username"> Username </label> :
+							<input type="text" class="form-control" id="username" name="username"
+							placeholder="Enter Username" autofocus="autofocus">
+						</div>
+						<div class = "form-group">
+							<label for = "password"> Password </label> :
+							<input type="password" class="form-control" id="password" name="password"
+							placeholder="Enter Password" autofocus="autofocus">
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-6 col-sm-offset-3">
+									<input type="submit" name="login-submit" id="login-submit"
+									class="form-control btn btn-primary" value="login"/>
+								</div>
+							</div>
+						</div>
+					</form>
+					<div class="form-group">
+						<span>New user? <a href="/" th:href="@{/registration}">Register here
+						</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- JavaScript Libraries -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/jquery/jquery-migrate.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/easing/easing.min.js"></script>
+        <script src="vendor/stickyjs/sticky.js"></script>
+        <script src="vendor/superfish/hoverIntent.js"></script>
+        <script src="vendor/superfish/superfish.min.js"></script>
+        <script src="vendor/owlcarousel/owl.carousel.min.js"></script>
+        <script src="vendor/touchSwipe/jquery.touchSwipe.min.js"></script>
+
+        <!-- Main Javascript File -->
+        <script src="js/main.js"></script>
+	
+	</body>
+</html>

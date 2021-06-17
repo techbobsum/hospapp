@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+	    <title>MedicApp</title>
+	    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+	    <meta content="" name="keywords">
+	    <meta content="" name="description">
+	
+	        <!-- Favicons -->
+	    <link href="img/favicon.ico" rel="icon">
+	    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+	
+	        <!-- Google Fonts -->
+	    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Nunito:600,700,800,900" rel="stylesheet"> 
+	
+	        <!-- Bootstrap CSS File -->
+	    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	
+	        <!-- Libraries CSS Files -->
+	    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	    <link href="vendor/animate/animate.min.css" rel="stylesheet">
+	    <link href="vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
+	    <link href="vendor/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+	
+	        <!-- Main Stylesheet File -->
+	    <link href="css/hover-style.css" rel="stylesheet">
+	    <link href="css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<!-- form -->
+		<div class = "container">
+			<div class = "row">
+				<div class = "col-md-6 col-md-offset-3">
+					<!-- Success Msg -->
+					<div th:if="${param.success}">
+						<div class="alert alert-info">
+						You have successfully registered!
+						</div>
+					</div>
+						<h1>Registration</h1>
+						<form th:action="@{/registration}" method="post" th:object = ${user}>
+							<div class = "form-group">
+								<label class = "control-label" for="firstName">
+									First Name
+								</label>
+								<input id = "firstName" class = "form-control" th:field="*{firstName}" required autofocus="autofocus"/>
+							</div>
+							<div class = "form-group">
+								<label class = "control-label" for="lastName">
+									Last Name
+								</label>
+								<input id = "lastName" class = "form-control" th:field="*{lastName}" required autofocus="autofocus"/>
+							</div>
+							<div class = "form-group">
+								<label class = "control-label" for="username">
+									Username
+								</label>
+								<input id = "username" class = "form-control" th:field="*{username}" required autofocus="autofocus"/>
+							</div>
+							<div class = "form-group">
+								<label class = "control-label" for="email">
+									Email
+								</label>
+								<input id = "email" class = "form-control" th:field="*{email}" required autofocus="autofocus"/>
+							</div>
+							<div class = "form-group">
+								<label class = "control-label" for="password">
+									Password
+								</label>
+								<input id = "password" class = "form-control" type="password" th:field="*{password}" required autofocus="autofocus"/>
+							</div>
+							<button type="submit" class="btn btn-success">Register</button>
+							<span>Already registered? <a href="/" th:href="@{/login}">Login here</a></span>
+							
+						</form>
+					</div>
+					
+				</div>
+			</div>
+		
+		<!-- JavaScript Libraries -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/jquery/jquery-migrate.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/easing/easing.min.js"></script>
+        <script src="vendor/stickyjs/sticky.js"></script>
+        <script src="vendor/superfish/hoverIntent.js"></script>
+        <script src="vendor/superfish/superfish.min.js"></script>
+        <script src="vendor/owlcarousel/owl.carousel.min.js"></script>
+        <script src="vendor/touchSwipe/jquery.touchSwipe.min.js"></script>
+
+        <!-- Main Javascript File -->
+        <script src="js/main.js"></script>
+		
+	</body>
+</html>
